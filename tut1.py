@@ -41,8 +41,9 @@ while True:
             
             if 'pi' in angle_value_in_radian:
                 if '/' in angle_value_in_radian:
-
-                    trig_list = [trig_string,PI/int(angle_value_in_radian.split('/')[1])]
+                    
+                    trig_list = [trig_string,int(angle_value_in_radian.lower().split('pi')[0])*PI/int(angle_value_in_radian.lower().split('/')[1])]
+                    print(trig_list)
                 else:
                     print(angle_value_in_radian.split('pi'))
                     if len(angle_value_in_radian.split('pi')[0])==0:
