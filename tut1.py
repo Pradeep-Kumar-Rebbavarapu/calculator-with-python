@@ -1,10 +1,12 @@
+PI = 3.141592653589793
+e = 2.718281828459045
 Addition = lambda x,y: x + y
 Subtraction = lambda x,y:x - y
 Multiplication = lambda x,y:x*y
 Division = lambda x,y:x/y
-Exponential = lambda x,y:x**y
+Exponential = lambda x,y:e**y if x=="e" else float(x)**y
 factorial = lambda n:n*factorial(n-1) if n>0 else 1
-PI = 3.141592653589793
+
 def sinx(x):
     sign = 1
     total_sum = 0
@@ -32,7 +34,10 @@ cosecx = lambda x:'not defined' if sinx(x)==0 else 1/sinx(x)
 operators = ['-','+','*','/','^']
 while True:
     try:
-        ch = input('===>')  
+        ch = input('===>') 
+        if ch=="q" or ch=='Q':
+            print('Thank You')
+            break 
         string_with_no_white_spaces = ch.replace(' ','').lower()
         if '(' and ')' in string_with_no_white_spaces:
             angle_value_in_radian = string_with_no_white_spaces.split('(')[1].replace(")","")
@@ -90,10 +95,11 @@ while True:
             if string_list[2]=="/":
                 print(Division(float(string_list[0]),float(string_list[1])))
             if string_list[2]=="^":
-                print(Exponential(float(string_list[0]),float(string_list[1])))
+                print(Exponential(string_list[0],float(string_list[1])))
         elif '!' in string_with_no_white_spaces:
             
             print(factorial(int(string_with_no_white_spaces.split('!')[0]))) 
+        
     except Exception as e:
         print('Please Input Valid Values')
      
