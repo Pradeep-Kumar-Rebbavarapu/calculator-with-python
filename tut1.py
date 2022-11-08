@@ -31,6 +31,7 @@ secx = lambda x:'not defined' if cosx(x)==0 else 1/cosx(x)
 cosecx = lambda x:'not defined' if sinx(x)==0 else 1/sinx(x)
 operators = ['-','+','*','/','^']
 while True:
+    try:
         ch = input('===>')  
         string_with_no_white_spaces = ch.replace(' ','').lower()
         if '(' and ')' in string_with_no_white_spaces:
@@ -93,6 +94,8 @@ while True:
         elif '!' in string_with_no_white_spaces:
             factorial_list = [i for i in string_with_no_white_spaces]
             print(factorial(int(factorial_list[0]))) 
+    except Exception as e:
+        print('Please Input Valid Values')
      
     
     
