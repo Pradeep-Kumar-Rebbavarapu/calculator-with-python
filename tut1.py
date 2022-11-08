@@ -92,8 +92,8 @@ while True:
             if string_list[2]=="^":
                 print(Exponential(float(string_list[0]),float(string_list[1])))
         elif '!' in string_with_no_white_spaces:
-            factorial_list = [i for i in string_with_no_white_spaces]
-            print(factorial(int(factorial_list[0]))) 
+            print(string_with_no_white_spaces.split('!')[0])
+            print(factorial(int(string_with_no_white_spaces.split('!')[0]))) 
     except Exception as e:
         print('Please Input Valid Values')
      
